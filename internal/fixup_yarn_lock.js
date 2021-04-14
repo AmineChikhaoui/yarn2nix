@@ -25,7 +25,7 @@ const result = []
 
 readFile
   .on('line', line => {
-    const arr = line.match(/^ {2}resolved "([^#]+)#([^"]+)"$/)
+    const arr = line.match(/^ {2}resolved "([^#]+)[#]*([^"]+)"$/)
 
     if (arr !== null) {
       const [_, url, shaOrRev] = arr
