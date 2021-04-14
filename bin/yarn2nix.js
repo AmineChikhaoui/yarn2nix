@@ -61,7 +61,7 @@ const pkgs = R.pipe(
   R.uniqBy(R.prop('resolved')),
 )(json.object)
 
-const fixedPkgsPromises = R.map(fixPkgAddMissingSha1, pkgs)
+const fixedPkgsPromises = pkgs;
 
 ;(async () => {
   const fixedPkgs = await Promise.all(fixedPkgsPromises)
